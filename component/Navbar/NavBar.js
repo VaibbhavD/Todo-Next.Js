@@ -24,7 +24,7 @@ function NavBar() {
             type="button"
             data-twe-ripple-init
             data-twe-ripple-color="light"
-            class="me-3 flex inline-block rounded px-2 pb-2 pt-2.5  font-bold text-lg  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500"
+            class="me-3 flex rounded px-2 pb-2 pt-2.5  font-bold text-lg  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
