@@ -9,7 +9,7 @@ function TodoItem(props) {
           class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
         />
         <label for="todo1" class="ml-3 block text-gray-100">
-          <span class="text-lg font-medium mr-3">{props.todo}</span>
+          <span class="text-lg font-medium mr-3 text-black">{props.todo}</span>
         </label>
       </div>
     </li>

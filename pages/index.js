@@ -16,7 +16,7 @@ export default function Home() {
     <div class="h-screen pt-20">
       <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden ">
         <div class="px-4 py-2">
-          <h1 class="text-gray-800 font-bold text-2xl ">Todo</h1>
+          <h1 class="text-orange-600 font-bold text-2xl ">Todo</h1>
         </div>
         <TodoForm AddTodo={AddTodo} />
 
