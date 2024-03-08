@@ -23,6 +23,20 @@ function Home(props) {
     console.log(todos);
   };
 
+  const Delete = async (todo) => {
+    const temp = todos.filter((to) => to.id !== todo.id);
+    settodos(temp);
+    const response = await fetch("api/Delete/", {
+      method: "DELETE",
+      body: JSON.stringify(todo),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <div class="h-screen pt-20">
       <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden ">
@@ -33,7 +47,7 @@ function Home(props) {
 
         <ul class="divide-y px-4">
           {todos.map((todo) => (
-            <TodoItem todo={todo} />
+            <TodoItem todo={todo} Delete={Delete} />
           ))}
         </ul>
       </div>
