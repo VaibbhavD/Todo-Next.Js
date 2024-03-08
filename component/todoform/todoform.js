@@ -5,7 +5,9 @@ function TodoForm(props) {
 
   const SubmitHandler = (e) => {
     e.preventDefault();
-    const todo = todoRef.current.value;
+    const todo = {
+      todo: todoRef.current.value,
+    };
     props.AddTodo(todo);
     todoRef.current.value = "";
   };
