@@ -1,12 +1,16 @@
 function TodoItem(props) {
+  const DeleteHandler = () => {
+    props.Delete(props.todo);
+  };
+
   return (
-    <li class="py-4 flex">
+    <li class="py-4 flex ">
       <div class="flex items-center w-1/2">
         <input
           id="todo1"
           name="todo1"
           type="checkbox"
-          class="h-4 w-4 mr-1 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
+          class="h-4 w-4 mr-1 text-teal-600 focus:ring-teal-500 border-gray-300 rounded cursor-pointer"
         />
         <label for="todo1" class="ml-3 block text-gray-100">
           <span class="text-xl font-medium mr-3 text-black">
@@ -14,7 +18,7 @@ function TodoItem(props) {
           </span>
         </label>
       </div>
-      <div class="flex items-center w-1/2 justify-end gap-3">
+      <div class="flex items-center w-1/2 justify-end gap-3 hover:{} ">
         <label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +26,7 @@ function TodoItem(props) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 text-blue-700"
+            className="w-5 h-5 text-blue-700 cursor-pointer"
           >
             <path
               strokeLinecap="round"
@@ -31,14 +35,14 @@ function TodoItem(props) {
             />
           </svg>
         </label>
-        <label>
+        <label onClick={DeleteHandler}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 text-red-700"
+            className="w-5 h-5 text-red-700 cursor-pointer"
           >
             <path
               strokeLinecap="round"
@@ -52,7 +56,7 @@ function TodoItem(props) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 cursor-pointer"
           >
             <path
               fillRule="evenodd"
