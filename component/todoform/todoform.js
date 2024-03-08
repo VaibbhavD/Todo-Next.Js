@@ -7,6 +7,7 @@ function TodoForm(props) {
     e.preventDefault();
     const todo = {
       todo: todoRef.current.value,
+      status: "false",
     };
     props.AddTodo(todo);
     todoRef.current.value = "";
