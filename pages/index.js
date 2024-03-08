@@ -42,6 +42,19 @@ function Home(props) {
     temp.todo = todo.todo;
   };
 
+  const Completed = async (todo) => {
+    const response = await fetch("api/DoneTodo/", {
+      method: "POST",
+      body: JSON.stringify(todo.todo),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    Delete(todo);
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <div class="h-screen pt-20">
       <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden ">
@@ -52,7 +65,12 @@ function Home(props) {
 
         <ul class="divide-y px-4">
           {todos.map((todo) => (
-            <TodoItem todo={todo} Delete={Delete} Updatetodo={Updatetodo} />
+            <TodoItem
+              todo={todo}
+              Delete={Delete}
+              Updatetodo={Updatetodo}
+              Completed={Completed}
+            />
           ))}
         </ul>
       </div>
@@ -78,4 +96,5 @@ export async function getStaticProps() {
     },
   };
 }
+
 export default Home;

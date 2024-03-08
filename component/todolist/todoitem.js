@@ -35,6 +35,7 @@ function TodoItem(props) {
           name="todo1"
           type="checkbox"
           class="h-4 w-4 mr-1 text-teal-600 focus:ring-teal-500 border-gray-300 rounded cursor-pointer"
+          onClick={() => props.Completed(props.todo)}
         />
         <label for="todo1" class="ml-3 block text-gray-100">
           {!edit && (
