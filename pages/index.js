@@ -37,15 +37,26 @@ function Home(props) {
     console.log(data);
   };
 
-  const Updatetodo = (todo) => {
+  const Updatetodo = async (todo) => {
     let temp = todos.find((to) => to.id === todo.id);
     temp.todo = todo.todo;
+    const response = await fetch("api/UpdateTodo/", {
+      method: "PUT",
+      body: JSON.stringify(todo),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
   };
 
   const Completed = async (todo) => {
     const response = await fetch("api/DoneTodo/", {
       method: "POST",
-      body: JSON.stringify(todo.todo),
+      body: JSON.stringify({
+        todo: todo.todo,
+      }),
       headers: {
         "Content-type": "application/json",
       },
