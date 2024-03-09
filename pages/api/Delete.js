@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 export default async function Post(req, res) {
   if (req.method === "DELETE") {
     const data = req.body;
@@ -7,7 +7,7 @@ export default async function Post(req, res) {
     );
     const db = Client.db();
     const Todocollection = db.collection("Todo");
-    await Todocollection.deleteOne({ todo: data.todo });
+    await Todocollection.deleteOne({ _id: new ObjectId(data.id) });
     Client.close();
 
     res.status(201).json({ message: "Delete Successfull !" });
