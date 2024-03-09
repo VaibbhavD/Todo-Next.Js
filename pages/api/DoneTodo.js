@@ -8,7 +8,6 @@ export default async function Post(req, res) {
     const db = Client.db();
     const Todocollection = db.collection("done");
     const result = await Todocollection.insertOne(data);
-    console.log(result);
     Client.close();
 
     res.status(201).json({ message: "Post Successfull !", data: result });
