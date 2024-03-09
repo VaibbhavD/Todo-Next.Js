@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
+
 function NavBar() {
+  const router = useRouter();
   return (
     <nav
       class="relative flex w-full  items-center justify-between bg-orange-600 py-2 shadow-dark-mild text-md lg:py-2"
@@ -25,6 +28,7 @@ function NavBar() {
             data-twe-ripple-init
             data-twe-ripple-color="light"
             class="me-3 flex rounded px-2 pb-2 pt-2.5  font-bold text-lg  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-secondary-600 dark:hover:text-secondary-500 dark:focus:text-secondary-500 dark:active:text-secondary-500"
+            onClick={() => router.push("/Completed")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
