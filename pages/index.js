@@ -18,6 +18,7 @@ function Home(props) {
       },
     });
     const data = await response.json();
+    alert("Added Successful !");
 
     settodos((prev) => [...prev, { ...todo, id: data.data.insertedId }]);
     console.log(todos);
@@ -34,6 +35,7 @@ function Home(props) {
       },
     });
     const data = await response.json();
+    alert("Delete Successful !");
     console.log(data);
   };
 
@@ -48,6 +50,7 @@ function Home(props) {
       },
     });
     const data = await response.json();
+    alert("Update Successful !");
     console.log(data);
   };
 
@@ -63,6 +66,7 @@ function Home(props) {
     });
     Delete(todo);
     const data = await response.json();
+    alert("Completed Successful !");
     console.log(data);
   };
 
