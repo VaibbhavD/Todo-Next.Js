@@ -21,6 +21,7 @@ function TodoForm(props) {
           type="text"
           ref={todoRef}
           placeholder="Add a task"
+          required
         />
         <button
           class="flex-shrink-0 bg-orange-600 hover:orange-600 border-orange-600 hover:border-orange-500 text-sm border-2 text-white py-1 px-2 rounded"
